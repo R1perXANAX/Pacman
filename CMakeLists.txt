@@ -1,0 +1,82 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(PACMANV2)
+
+set(CMAKE_CXX_STANDARD 14)
+include_directories(${SFML_INCLUDE_DIR})
+find_package(SFML COMPONENTS system window graphics audio network REQUIRED)
+add_executable(PACMANV2 main.cpp
+        View/GameWindow.cpp
+        View/GameWindow.h
+        Logic/ObserverPattern/IObserver.h
+        Logic/ObserverPattern/ISubject.h
+        Logic/Camera.cpp
+        Logic/Camera.h
+        Logic/Vector2D.h
+        Logic/StopWatch.cpp
+        Logic/StopWatch.h
+        Logic/Random.h
+        Logic/StatePattern/StateManager.h
+        Game/GameStates/MenuState.cpp
+        Game/GameStates/MenuState.h
+        Game/GameStates/LevelState.cpp
+        Game/GameStates/LevelState.h
+        Game/GameStates/PauseState.cpp
+        Game/GameStates/PauseState.h
+        Game/GameStates/VictoryState.cpp
+        Game/GameStates/VictoryState.h
+        Game/GameStates/GameOverState.cpp
+        Game/GameStates/GameOverState.h
+        Game/SoundManager.cpp
+        Game/SoundManager.h
+        Game/MapManager.cpp
+        Game/MapManager.h
+        Global.h
+        Logic/Entities/EntityModel.cpp
+        Logic/Entities/EntityModel.h
+        Logic/Entities/DynamicEntityModel.cpp
+        Logic/Entities/DynamicEntityModel.h
+        Logic/Entities/DynamicEntities/PacmanEntity.cpp
+        Logic/Entities/DynamicEntities/PacmanEntity.h
+        Logic/Entities/DynamicEntities/PacmanController.cpp
+        Logic/Entities/DynamicEntities/PacmanController.h
+        Logic/Entities/StaticEntities/CollectableEntity.cpp
+        Logic/Entities/StaticEntities/CollectableEntity.h
+        Logic/Entities/IAbstractFactory.h
+        Logic/Entities/DynamicEntities/GhostEntity.cpp
+        Logic/Entities/DynamicEntities/GhostEntity.h
+        Game/ScoreManager.cpp
+        Game/ScoreManager.h
+        View/Entities/DynamicEntities/PacmanView.cpp
+        View/Entities/DynamicEntities/PacmanView.h
+        View/Entities/EntityView.h
+        View/Entities/Animation.cpp
+        View/Entities/Animation.h
+        Logic/World.cpp
+        Logic/World.h
+        View/Entities/StaticEntities/CollectableView.cpp
+        View/Entities/StaticEntities/CollectableView.h
+        Game/ConcreteFactory.cpp
+        Game/ConcreteFactory.h
+        View/Entities/DynamicEntities/GhostView.cpp
+        View/Entities/DynamicEntities/GhostView.h
+        Game/Game.cpp
+        Game/Game.h
+        Game/GameStateManager.cpp
+        Game/GameStateManager.h
+        Game/GameStates/IGameState.h
+        Logic/Entities/DynamicEntities/States/IPlayerState.h
+        Logic/Entities/DynamicEntities/States/FearingState.cpp
+        Logic/Entities/DynamicEntities/States/FearingState.h
+        Logic/Entities/DynamicEntities/GhostAI.cpp
+        Logic/Entities/DynamicEntities/GhostAI.h
+        Logic/Entities/DynamicEntities/States/ChasingState.cpp
+        Logic/Entities/DynamicEntities/States/ChasingState.h
+        Logic/Entities/DynamicEntities/States/SetupState.cpp
+        Logic/Entities/DynamicEntities/States/SetupState.h
+        Logic/Entities/DynamicEntities/States/RunningState.cpp
+        Logic/Entities/DynamicEntities/States/RunningState.h
+        Logic/Entities/DynamicEntities/States/SleepingState.cpp
+        Logic/Entities/DynamicEntities/States/SleepingState.h
+)
+target_link_libraries(PACMANV2 sfml-system sfml-graphics sfml-window sfml-audio)
+install(TARGETS PACMANV2 DESTINATION bin)
