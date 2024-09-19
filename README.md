@@ -1,4 +1,5 @@
 University of Antwerp Project
+Tested on Ubuntu
 
 Read additional [design choice](https://github.com/AP-Lab-Sessions/2023-project-Z3roC0d3/blob/master/PacManV2%20Doc.pdf)
 
